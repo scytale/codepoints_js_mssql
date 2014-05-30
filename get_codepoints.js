@@ -8,7 +8,7 @@ var result="";
 function codePointValue(number){
   return String.fromCodePoint(number);
 };
-for (var i=241;i<246;i++){
+for (var i=1;i<=255;i++){
   if (codePointValue(i) == ""){
     console.log("no value");
   } else {
