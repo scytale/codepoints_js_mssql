@@ -14,7 +14,8 @@ for (var i=241;i<246;i++){
   } else {
       console.log(i + " is " + codePointValue(i));
       console.log("SELECT Id,TopicText,Description from Topic where TopicText like '%[" + codePointValue(i) + "]%' Collate SQL_Latin1_General_CP1_CS_AS" );
-      console.log("UPDATE Topic SET TopicText=REPLACE(TopicText,'"+ codePointValue(i) + "','&#" + i + ";') WHERE Id in (" + "InsertTopicIds)")
+      console.log("SELECT Id,TopicText,Description from Topic where TopicText like '%[" + codePointValue(i) + "]%' Collate SQL_Latin1_General_CP1_CS_AS" );
+      console.log("UPDATE Topic SET TopicText=REPLACE(TopicText,'"+ codePointValue(i) + "','&#" + i + ";') WHERE Id in (" + "SELECT Id from Topic where TopicText like '%[" + codePointValue(i) + "]%' Collate SQL_Latin1_General_CP1_CS_AS)")
       result = result + codePointValue(i);
   }
 }
